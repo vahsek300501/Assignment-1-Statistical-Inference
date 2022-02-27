@@ -33,7 +33,7 @@ print(output3)
 
 
 # Question-1 Part C
-lambdaVals = seq(0.1,4,by = 0.1)
+lambdaVals = seq(0.1,5,by = 0.2)
 mleOutput <- list()
 i = 1
 for (lVal in lambdaVals) {
@@ -41,7 +41,7 @@ for (lVal in lambdaVals) {
   mleOutput[i] <- output
   i <- i +1
 }
-plot(lambdaVals,mleOutput)
+plot(lambdaVals,mleOutput,xlab = "Lambda Values",ylab = "Log-Likelyhood Function", main = "Log Likelyhood vs lamda values")
 
 # Question-1 Part D
 rVals = seq(0.1, 10, by=0.2)
@@ -52,4 +52,4 @@ maxLikelyhoodFunction.gammaNew <- function(alpha,beta) {
 }
 mleOutput2 = -1*outer(rVals,lambdaVals,maxLikelyhoodFunction.gammaNew)
 print(mleOutput2)
-persp(rVals,lambdaVals,mleOutput2)
+persp(rVals,lambdaVals,mleOutput2,xlab = "r Vals", ylab = "Lambda vals",zlab = "Log-Likelihood",main = "Log Likelyhood vs r and lambda")
